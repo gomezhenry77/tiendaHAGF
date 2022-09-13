@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda SURA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delius&family=Just+Another+Hand&family=Kalam&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles/estilos.css">
+</head>
+
+<body class="fuente">
+<header class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark container-fluid">
+      <div class="container-fluid">
+        <div>
+          <img src="https://firebasestorage.googleapis.com/v0/b/tiendasurahagf.appspot.com/o/logo.jpg?alt=media&token=db2ff022-e4f5-439c-8ed7-aed94ced803d" width="60" alt="Logo" />
+        </div>
+        <h4 class="text-light">Tienda de instrumentos musicales</h4>
+        <div class="d-flex justify-content-center">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav gap-3">
+              <a class="nav-link active fw-bold" aria-current="page" href="./src/views/tienda.html"
+                >TIENDA</a
+              >
+              <button
+              type="button"
+              class="btn btn-danger mb-2 mt-2"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              >
+              Iniciar sesión
+              </button>
+              <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Iniciar sesión
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div id="modalLogin" class="modal-body">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Dirección de correo</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailLogin"
+                  placeholder="correo@ejemplo.com"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordLogin"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+
+              <button type="submit" class="btn btn-primary" id="botonIniciar">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+              <button
+                class="btn btn-primary mb-2 mt-2"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
+              >
+                Regístrate
+              </button>
+
+            <button id="usuario"
+              class="btn btn-dark mb-2 mt-2"
+              type="button"
+            >
+              
+            </button>
+              <button id="botonSalir"
+              class="btn btn-warning"
+              type="button"
+            >
+              <i class="bi bi-box-arrow-right"></i> Salir
+            </button>
+            <li class="nav-item">
+              <a class="nav-link" href="./src/views/resumenCompra.html"><i class="bi bi-cart-plus-fill fs-4"></i>
+                <span id="pildora" class="position-absolute top-10 start-10 translate-middle badge rounded-pill bg-danger">
+                    0
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+            </a>
+            </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Registro</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <form id="formulario">
+          <div class="mb-3">
+            <label class="form-label">E-mail</label>
+            <input
+              type="email" class="form-control" id="correo"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+            />
+          </div>
+          <button id="botonRegistro" type="submit" class="btn btn-primary">Regístrate</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="dropdown-menu">
+      <form class="px-4 py-3">
+        <div class="mb-3">
+          <label for="exampleDropdownFormEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleDropdownFormEmail1"
+            placeholder="email@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleDropdownFormPassword1" class="form-label"
+            >Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="exampleDropdownFormPassword1"
+            placeholder="Password"
+          />
+        </div>
+        <div class="mb-3">
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="dropdownCheck"
+            />
+            <label class="form-check-label" for="dropdownCheck">
+              Remember me
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">New around here? Sign up</a>
+      <a class="dropdown-item" href="#">Forgot password?</a>
+    </div>
+  </section>
+
+  <main>
+    <section class="container-fluid">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide container-sm"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/tiendasurahagf.appspot.com/o/banner2.jpg?alt=media&token=70c1a311-43c4-4042-b84d-35d5f49d26a0"
+              class="d-block w-100"
+              alt="Nuevo estudio de grabación"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Ya tenemos estudio de grabación, reserva tu espacio</h6>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/tiendasurahagf.appspot.com/o/donaci%C3%B3n%20de%20instrumentos.jpg?alt=media&token=0f6aebba-373b-4c3a-bb59-0c135d14b668"
+              class="d-block w-100"
+              alt="Noticia donación de instrumentos"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Apoyamos el programa para la donación de instrumentos</h6>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/tiendasurahagf.appspot.com/o/la%20venta%20de%20guitarras%20se%20ha%20disparado.jpg?alt=media&token=f65cd07b-68f6-471d-a37c-471b6e86de6a"
+              class="d-block w-100"
+              alt="Noticia venta de guitarras"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Descubre por qué la venta de guitarra se ha disparado</h6>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <section class="container-fluid p-4 bg-warning bg-gradient">
+      <div class="container-fluid">
+        <h1 class="d-flex justify-content-center">Busca tu tipo de instrumento</h1>
+      </div>
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="col mt-3">
+            <div class="card" style="width: 25rem">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/tiendasurahagf.appspot.com/o/2piano2.jpg?alt=media&token=8a8e8730-2786-4dc8-9f92-ba824c14c6dc"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h4 class="card-title">Orquesta</h4>
+                <p class="card-text">
+                 Encuentra en nuestra tienda finos intrumentos para orquesta
+                </p>
+                <a
+                  href="./src/views/"
+                  target="_blank"
+                  class="btn btn-dark"
+                  >Ir a la tienda</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col mt-3">
+            <div class="card" style="width: 25rem">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/tiendasurahagf.appspot.com/o/1bateria1.jpg?alt=media&token=5adea6a5-af34-4d77-826b-0677767d935f"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h4 class="card-title">Rock</h4>
+                <p class="card-text">
+                  Desata tu energía con nuestros potentes instrumentos para rockear
+                </p>
+                <a
+                  href="./src/views/tienda.html"
+                  target="_blank"
+                  class="btn btn-dark"
+                  >Ir a la tienda</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col mt-3">
+            <div class="card" style="width: 25rem">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/tiendasurahagf.appspot.com/o/6acordeon1.jpg?alt=media&token=bc33df53-80c4-470e-9ab1-e9d13c8a76a6"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body">
+                <h4 class="card-title">Músicas del mundo</h4>
+                <p class="card-text">
+                  Explora el mundo a través de los sonidos de diferentes culturas
+                </p>
+                <a
+                  href="./src/views/tienda.html"
+                  target="_blank"
+                  class="btn btn-dark"
+                  >Ir a la tienda</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    
+    <section class="banner text-white">
+      <h4>
+        Espectros de sombra pisoteados dispersos
+        <br>
+        y una canción que alumbra los muros del dolor
+        <br>
+        canción remedio para melancólicos
+        <br>
+        canción bálsamo de luz para los corazones tristes
+        <br>
+        el tiempo es demasiado largo y la vida demasiado corta
+        <br>
+        pero en las manchas heladas del invierno
+        <br>
+        no hay nada como una canción, tibio tapiz de sol
+        <br>
+        (Autora: Gilberta Anatonia Caron)
+      </h4>
+    </section>
+  </main>
+
+    <footer class="container-fluid p-1 bg-gradient">
+      <div class="container-fluid d-flex justify-content-center">
+        <p>
+          &copy; Todos Los Derechos Reservados 2.022
+        </p>
+      </div>
+      <div class="container-fluid d-flex justify-content-center gap-3">
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-pinterest"></i>
+      </div>
+    </footer>
+  <script src="./src/controllers/detalleProducto.js"></script>
+  <script src="./src/services/conexionFireBase.js" type="module"></script>
+  <script src="./src/services/registro.js" type="module"></script>
+  <script src="./src/services/observadorEstado.js" type="module"></script>
+  <script src="./src/services/logout.js" type="module"></script>
+  <script src="./src/services/login.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+</body>
+
+</html>
